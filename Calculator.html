@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator with Prompt</title>
+    <style>
+      body {
+        display: flex;
+        background-color: black;
+        color:blanchedalmond;
+        font-size: 80px;
+        justify-content: center;
+        align-content:space-around;
+      }
+    </style>
+</head>
+<body>
+  <h1>
+    Calculator Page
+  </h1>
+    <script>
+      let x;
+      let y; 
+      let res;
+
+      do {
+          x = prompt('First Number?');           
+      } while (!isFinite(x) || x === null || x === '');
+
+      do {
+        y = prompt('Second Number?');
+      } while(!isFinite(y) || y === null || y === '');
+
+      let op = prompt('What operation would you like to perform? (add, subtract, divide, multiply)');
+
+      if (op === 'add' || op === 'Add' || op === 'ADD'){
+        res = +x + +y;
+      } else if (op === 'subtract' || op === 'Subtract' || op === 'SUBTRACT') {
+        res = x - y;
+      } else if (op === 'divide' || op === 'Divide' || op === 'DIVIDE') {
+        res = x/y;
+      } else if(op === 'multiply' || op === 'Multiply' || op === 'MULTIPLY') {
+        res = x * y;
+      } else {
+        res = 'reload page!'
+      }
+      alert(res);
+        
+    </script>
+</body>
+</html>
